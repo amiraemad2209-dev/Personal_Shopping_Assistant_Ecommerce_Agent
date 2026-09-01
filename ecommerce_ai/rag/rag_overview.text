@@ -1,0 +1,93 @@
+
+User
+ │
+ │ message + uploaded file
+ ↓
+Agent
+ │
+ ├── normal request? ──────→ Recommendation
+ │
+ └── file-related request? → RAG
+                              │
+                              ↓
+                         PDF Loader
+                              ↓
+                           Chunking
+                              ↓
+                         Embeddings
+                              ↓
+                         Vector DB
+                              ↓
+                          Retriever
+                              ↓
+                           Context
+                              ↓
+                             LLM
+                              ↓
+                        Final Answer
+
+
+====================================================================
+
+like a tool ex : document_search 
+
+                    Agent
+                      │
+          ┌───────────┼───────────┐
+          ↓           ↓           ↓
+    Recommendation  Web Search   document_search (RAG)
+                                 │
+                                 ↓
+                              Retriever
+                                 │
+                              Chroma
+                                 │
+                            Embeddings
+                                 │
+                              Chunks
+                                 │
+                              Loader
+
+
+
+for example ↓
+            ↓
+
+a User:
+
+"What is the price of the ASUS laptop in my PDF?"
+             ↓
+          Agent
+             ↓
+     document_search
+             ↓
+        RAG folder
+             ↓
+         Retriever
+             ↓
+       relevant chunks
+             ↓
+          Agent
+             ↓
+         Final answer
+
+
+project/
+│
+├── config.py
+│
+├── rag/
+│   ├── __init__.py
+│   ├── loaders.py
+│   ├── chunking.py
+│   ├── embeddings.py
+│   ├── vectorstore.py
+│   ├── record_manager.py
+│   ├── indexing.py
+│   ├── retriever.py
+│   ├── schemas.py
+│   └── pipeline.py
+│
+└── tools/
+    ├── __init__.py
+    └── document_search.py

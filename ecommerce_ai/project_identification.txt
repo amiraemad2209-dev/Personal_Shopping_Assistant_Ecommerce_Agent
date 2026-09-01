@@ -1,0 +1,1521 @@
+
+#-----------------------------Personal Shopping Assistant (E-commerce Agent)----------------------#
+#---------------------------------- وثيقة تعريفية وأكاديمية للمشروع ----------------------------#
+
+1. مقدمة المشروع
+1.1 اسم المشروع
+
+Personal Shopping Assistant
+
+مساعد تسوق شخصي يعتمد على تقنيات الذكاء الاصطناعي 
+ والنماذج اللغوية الكبيرة 
+ لمساعدة المستخدم في البحث عن المنتجات
+ ، فهم احتياجاته، تحليل تفضيلاته، ومقارنة الخيارات المتاحة
+ ، ثم تقديم توصيات شخصية مناسبة له.
+
+لا يهدف المشروع إلى بناء  تقليدي يجيب عن أسئلة عامة، وإنما إلى بناء نظام ذكي
+ يستطيع استخدام مجموعة من مصادر البيانات والأدوات
+ لفهم من هو العميل وماذا يحتاج وما المنتجات المتاحة
+ ، ثم اتخاذ خطوات مناسبة للوصول إلى توصية مفيدة.
+
+===============================================================================================
+
+2. خلفية المشكلة
+2.1 مشكلة كثرة المنتجات
+
+تحتوي المتاجر الإلكترونية الحديثة على أعداد كبيرة من المنتجات والخيارات والمواصفات.
+
+عند رغبة المستخدم في شراء منتج، قد يواجه:
+
+عددًا كبيرًا من النتائج.
+مواصفات تقنية معقدة.
+اختلافات بسيطة بين المنتجات.
+صعوبة مقارنة المنتجات.
+عدم معرفة المواصفات المناسبة لاحتياجاته.
+صعوبة تحديد العلاقة بين السعر والجودة.
+الحاجة إلى قراءة عدد كبير من صفحات المنتجات والمراجعات.
+
+على سبيل المثال، إذا بحث مستخدم عن:
+"Laptop"
+
+فقد تظهر له مئات المنتجات.
+لكن السؤال الحقيقي الذي يحتاج إلى إجابة ليس:
+ما هي جميع أجهزة الـLaptop المتاحة؟
+وإنما:
+
+ما هو أفضل جهاز بالنسبة لاحتياجاتي وميزانيتي وطريقة استخدامي؟
+وهنا تظهر الحاجة إلى نظام Personal Shopping Assistant.
+
+
+
+2.2 مشكلة البحث التقليدي
+
+يعتمد البحث التقليدي غالبًا على:
+
+Keyword Search + Categories + Filters
+
+مثال:
+Search: Laptop
+
+
+Filters:
+- Price
+- Brand
+- RAM
+- Storage
+- CPU
+
+ولكن المستخدم قد لا يعرف أصلًا:
+
+ما حجم الـRAM الذي يحتاجه؟
+هل يحتاج GPU منفصلًا؟
+هل الأولوية للبطارية أم الأداء؟
+ما الفرق بين المنتجات؟
+هل المواصفات مناسبة لطريقة استخدامه؟
+
+لذلك، فإن النظام المقترح يسمح للمستخدم بالتعبير عن احتياجاته بلغة طبيعية.
+
+مثلًا:
+
+"أنا بدرس Computer Science وبعمل Programming وبحب Gaming وميزانيتي حوالي 40 ألف جنيه."
+ثم يقوم النظام بتحويل هذه الجملة إلى متطلبات يمكن استخدامها في البحث والتوصية.
+
+=============================================================================================
+
+3. الهدف الرئيسي للمشروع
+
+الهدف هو بناء مساعد ذكي يستطيع:
+
+فهم طلب المستخدم.
+استخراج احتياجاته ومتطلباته.
+الاحتفاظ بالسياق أثناء المحادثة.
+تذكر بعض التفضيلات المهمة للمستخدم.
+البحث في قاعدة بيانات المنتجات.
+استخدام أدوات مختلفة حسب الحاجة.
+ترتيب المنتجات المناسبة.
+تقديم توصيات شخصية.
+توضيح أسباب التوصية.
+الاستفادة من Feedback المستخدم لتحسين التوصيات مستقبلًا.
+
+===================================================================================
+
+4. أهداف المشروع التفصيلية
+4.1 Personalization
+
+تقديم توصيات تختلف من مستخدم إلى آخر.
+مثلًا، نفس السؤال:
+
+"رشحلي Laptop."
+
+يمكن أن ينتج عنه إجابتان مختلفتان.
+
+المستخدم الأول
+Use Case:
+Programming
+
+
+Budget:
+25,000 EGP
+
+
+Priority:
+Battery
+
+
+Preference:
+Portable device
+المستخدم الثاني
+Use Case:
+Gaming
+
+
+Budget:
+50,000 EGP
+
+
+Priority:
+GPU Performance
+
+
+Preference:
+High performance
+
+رغم أن السؤال نفسه، يجب أن تختلف التوصيات.
+
+4.2 Context Awareness
+
+يجب أن يفهم النظام المحادثة كسلسلة مترابطة.
+
+مثال:
+
+User: أنا عايز Laptop للـGaming.
+
+ثم:
+
+User: بس يكون مش غالي.
+
+كلمة:
+
+"مش غالي"
+
+يجب أن ترتبط بالسياق السابق.
+
+أي أن النظام يفهم:
+
+Product:
+Gaming Laptop
+
+
+Constraint:
+Affordable
+
+وليس التعامل مع كل رسالة بشكل مستقل.
+
+4.3 Persistent Personalization
+
+يجب أن يستطيع النظام، في مراحل متقدمة، الاحتفاظ ببعض المعلومات المهمة عن المستخدم.
+
+مثلًا:
+
+Customer Profile
+
+
+Interests:
+- Gaming
+- Programming
+
+
+Preferred Brands:
+- Lenovo
+- Logitech
+
+
+Budget Range:
+30,000 - 40,000 EGP
+
+
+Preferences:
+- High Performance
+- Good Battery
+
+
+Dislikes:
+- Expensive accessories
+- Poor microphone quality
+
+عند عودة المستخدم لاحقًا، يستطيع النظام استخدام هذه البيانات عند الحاجة.
+
+=========================================================================================
+
+5. سيناريو الاستخدام الأساسي
+5.1 بداية المحادثة
+
+يقول المستخدم:
+
+"أنا عايز Laptop للبرمجة والجيمينج وميزانيتي 40 ألف."
+
+يقوم النظام بتحليل الطلب.
+
+Input
+Natural Language Request
+Extracted Requirements
+Category:
+Laptop
+
+
+Use Cases:
+- Programming
+- Gaming
+
+
+Budget:
+40,000 EGP
+
+
+Priority:
+Performance
+5.2 جمع معلومات إضافية
+
+قد لا تكون البيانات كافية.
+
+لذلك يمكن للنظام طرح سؤال توضيحي:
+
+"هل تفضل قوة الـGPU أم البطارية أهم بالنسبة لك؟"
+
+يجيب المستخدم:
+
+"الـGPU أهم."
+
+فيتم تحديث المتطلبات:
+
+Category:
+Laptop
+
+
+Use Cases:
+- Programming
+- Gaming
+
+
+Budget:
+40,000 EGP
+
+
+Priorities:
+1. GPU Performance
+2. Overall Performance
+3. Battery
+5.3 البحث
+
+يقوم النظام بالبحث داخل قاعدة المنتجات.
+
+Product Database
+        ↓
+Search
+        ↓
+Filter
+        ↓
+Candidate Products
+
+مثلًا:
+
+Product A
+Price: 38,000
+
+
+Product B
+Price: 39,500
+
+
+Product C
+Price: 45,000
+
+يتم استبعاد Product C بسبب تجاوز الميزانية.
+
+5.4 الترتيب والتوصية
+
+يتم ترتيب المنتجات وفقًا لمدى توافقها مع احتياجات المستخدم.
+
+Requirements
++
+Customer Preferences
++
+Product Attributes
++
+Business Rules
+        ↓
+Ranking
+        ↓
+Top Recommendations
+
+ثم يقدم النظام:
+
+Product A — Best Match
+داخل الميزانية.
+GPU مناسب للـGaming.
+مناسب للـProgramming.
+يحقق أفضل توازن بين السعر والأداء.
+Product B — Alternative
+أداء أفضل في بعض المواصفات.
+سعر أعلى قليلًا.
+مناسب إذا كان المستخدم يقبل الاقتراب من الحد الأعلى للميزانية.
+
+===========================================================================================
+
+
+6. الفرق بين النظام المقترح وChatbot تقليدي
+6.1 Traditional Chatbot
+User Question
+      ↓
+LLM
+      ↓
+Answer
+
+يعتمد بشكل أساسي على السؤال الحالي.
+
+6.2 Personal Shopping Assistant
+                    User Request
+                         ↓
+                  Intent Understanding
+                         ↓
+              Requirement Extraction
+                         ↓
+         ┌──────────────┼──────────────┐
+         ↓              ↓              ↓
+Conversation      Customer Profile   Product Data
+ Context                ↓              ↓
+         └──────────────┼──────────────┘
+                         ↓
+                   Search / Tools
+                         ↓
+                     Ranking
+                         ↓
+                 Personalized Answer
+
+النظام هنا يعتمد على عدة مصادر للمعلومات قبل تقديم الإجابة.
+
+==============================================================================================
+
+7. المكونات الرئيسية للنظام
+7.1 Large Language Model (LLM)
+
+الـLLM هو المسؤول عن فهم اللغة الطبيعية والتفاعل مع المستخدم.
+
+تشمل مسؤولياته:
+
+فهم سؤال المستخدم.
+استخراج Intent.
+استخراج المتطلبات.
+فهم المحادثة.
+تحديد المعلومات الناقصة.
+اختيار Tool مناسبة.
+تحليل نتائج الأدوات.
+صياغة الإجابة النهائية.
+
+مثال:
+
+User Input
+
+"عايز wireless mouse للـGaming ومش عايز حاجة غالية."
+
+LLM Understanding
+Category:
+Mouse
+
+
+Connection:
+Wireless
+
+
+Use Case:
+Gaming
+
+
+Budget Constraint:
+Affordable
+
+=============================================================================================
+
+8. Memory System
+
+الـMemory عنصر أساسي لجعل النظام شخصيًا.
+
+يمكن تقسيمها إلى مستويات مختلفة.
+
+8.1 Short-Term Memory
+
+تحتفظ بسياق المحادثة الحالية.
+
+مثلًا:
+
+User:
+عايز Laptop.
+
+
+Assistant:
+هتستخدمه في إيه؟
+
+
+User:
+Programming وGaming.
+
+عند إرسال المستخدم رسالة جديدة:
+
+"البطارية مش مهمة."
+
+يجب أن يفهم النظام أن الحديث ما زال عن:
+
+Laptop
+for Programming + Gaming
+8.2 Window Memory
+
+يتم الاحتفاظ بعدد محدد من الرسائل الأخيرة.
+
+مثال:
+
+Window Size = 4
+
+يحتفظ النظام بآخر أربع رسائل فقط.
+
+الميزة
+بسيط.
+سريع.
+يقلل عدد الـtokens.
+العيب
+
+قد يفقد معلومات قديمة مهمة إذا كانت المحادثة طويلة.
+
+8.3 Summary Memory
+
+يتم تلخيص المعلومات المهمة بدل الاحتفاظ بجميع الرسائل.
+
+مثلًا:
+
+Original Conversation
+User likes gaming.
+User works as a programmer.
+User prefers Lenovo.
+User budget is around 40,000 EGP.
+User does not care much about battery.
+Summary
+The customer is interested in gaming and programming,
+prefers Lenovo products, has a budget around 40,000 EGP,
+and prioritizes performance over battery life.
+8.4 Hybrid Memory
+
+يجمع بين:
+
+Recent Messages
++
+Conversation Summary
++
+Persistent Customer Profile
+
+ويمكن اعتباره النموذج الأنسب في المراحل المتقدمة.
+
+================================================================================
+
+
+9. Customer Profile
+
+الـCustomer Profile هو تمثيل Structured لتفضيلات المستخدم.
+
+مثال:
+
+Customer ID: 123
+
+
+Interests:
+- Gaming
+- Programming
+
+
+Preferred Brands:
+- Lenovo
+- Logitech
+
+
+Budget Range:
+30,000 - 40,000 EGP
+
+
+Preferred Features:
+- High performance
+- Good GPU
+
+
+Disliked Features:
+- Poor microphone
+- Very expensive products
+
+من الأفضل تخزين هذه المعلومات بطريقة منظمة بدلًا من الاعتماد فقط على نص حر.
+
+=================================================================================
+
+10. Tools
+
+الأدوات تسمح للنظام بتنفيذ وظائف حقيقية.
+
+بدل أن يعتمد الـLLM على معرفته فقط.
+
+يمكن تصميم الأدوات التالية.
+
+10.1 Product Search Tool
+product_search()
+المسؤولية
+
+البحث عن المنتجات بناءً على:
+
+Category.
+Budget.
+Brand.
+Specifications.
+Availability.
+
+مثال:
+
+product_search(
+    category="laptop",
+    max_price=40000,
+    use_case="gaming"
+)
+10.2 Product Details Tool
+product_details()
+
+تجلب المعلومات الدقيقة عن المنتج.
+
+مثل:
+
+Price
+CPU
+GPU
+RAM
+Storage
+Display
+Availability
+
+وهذا مهم لتقليل مشكلة Hallucination.
+
+لا يجب أن يخترع الـLLM:
+
+سعر المنتج.
+المواصفات.
+التوافر.
+
+بل يجب أن يحصل عليها من مصدر بيانات موثوق.
+
+10.3 Recommendation Tool
+recommendation()
+
+تقوم بتحليل:
+
+User Requirements
++
+Customer Profile
++
+Candidate Products
+
+ثم ترجع أفضل المنتجات.
+
+10.4 Feedback Analysis Tool
+feedback_analysis()
+
+مثال:
+
+"الـHeadset صوتها ممتاز لكن الميكروفون سيئ."
+
+يتم استخراج:
+
+Positive:
+- Audio quality
+
+
+Negative:
+- Microphone quality
+
+ثم يمكن تحويل ذلك إلى Preference مستقبلية.
+
+10.5 Save Preference Tool
+save_preference()
+
+وظيفتها حفظ المعلومات المهمة.
+
+مثال:
+
+Preference:
+User dislikes poor microphone quality.
+
+=========================================================================================
+
+
+11. Agent System
+
+الـAgent مسؤول عن تحديد الخطوة التالية.
+
+بدل برمجة كل الاحتمالات يدويًا:
+
+if search:
+    ...
+elif details:
+    ...
+elif recommendation:
+    ...
+
+يمكن للنظام العمل كالتالي:
+
+User
+ ↓
+Agent
+ ↓
+Understand Request
+ ↓
+Decide Next Action
+ ├── Search Tool
+ ├── Product Details Tool
+ ├── Recommendation Tool
+ ├── Feedback Tool
+ └── Direct Response
+ ↓
+Observe Result
+ ↓
+Continue if needed
+ ↓
+Final Answer
+
+=============================================================================================
+
+
+12. مثال تفصيلي لعمل الـAgent
+User
+
+"رشحلي Mouse للـGaming تحت 3000 جنيه."
+
+Step 1: Understanding
+Intent:
+Recommendation
+
+
+Category:
+Mouse
+
+
+Use Case:
+Gaming
+
+
+Budget:
+3000 EGP
+Step 2: Tool Selection
+
+الـAgent يحدد أنه يحتاج:
+
+product_search()
+Step 3: Tool Execution
+
+يتم البحث في المنتجات.
+
+Step 4: Ranking
+
+يتم ترتيب النتائج.
+
+Step 5: Final Answer
+
+يتم تقديم أفضل المنتجات مع أسباب الاختيار.
+
+======================================================================================
+
+
+13. Product Search
+
+يمكن أن يعتمد البحث على أكثر من طريقة.
+
+13.1 Keyword Search
+
+مثال:
+
+"wireless gaming mouse"
+
+البحث عن المنتجات التي تحتوي على الكلمات.
+
+13.2 Metadata Filtering
+
+مثل:
+
+Price < 3000
+Brand = Logitech
+Available = True
+13.3 Semantic Search
+
+يفهم المعنى بدل التطابق الحرفي فقط.
+
+مثلًا:
+
+"عايز جهاز قوي للألعاب."
+
+يمكن ربطها بمنتجات لها خصائص:
+
+High Performance
+Dedicated GPU
+Gaming
+
+حتى إذا لم تستخدم المنتجات نفس كلمات المستخدم.
+
+
+======================================================================================
+
+
+14. RAG وProduct Retrieval
+
+يمكن استخدام RAG للوصول إلى المعلومات الموجودة في بيانات المنتجات.
+
+الشكل:
+
+User Query
+      ↓
+Retrieve Relevant Products
+      ↓
+Provide Relevant Data to LLM
+      ↓
+Generate Answer
+
+لكن في هذا المشروع، لا يكفي مجرد Retrieval.
+
+الأفضل:
+
+Retrieve
+   ↓
+Filter
+   ↓
+Rank
+   ↓
+Recommend
+   ↓
+Explain
+
+==============================================================================================
+
+
+15. Ranking System
+
+بعد العثور على مجموعة منتجات، نحتاج إلى ترتيبها.
+
+يمكن التفكير في Score مثل:
+
+Final Score =
+Budget Match
++
+Use Case Match
++
+Feature Match
++
+Brand Preference
++
+Customer Preference
++
+Availability
+
+كمثال مفاهيمي:
+
+Product A
+
+
+Budget Match:       10
+Gaming Match:       10
+Brand Preference:    8
+Feature Match:       9
+
+
+Final Score:        37
+
+ثم يتم ترتيب المنتجات.
+
+في البداية يمكن تنفيذ Ranking بسيط، ثم تطويره لاحقًا.
+
+====================================================================================================
+
+
+
+16. Feedback Loop
+
+النظام لا يجب أن ينتهي دوره بعد تقديم Recommendation.
+
+يمكن إنشاء دورة:
+
+Recommendation
+       ↓
+Customer Feedback
+       ↓
+Feedback Analysis
+       ↓
+Preference Extraction
+       ↓
+Customer Profile Update
+       ↓
+Future Recommendations
+
+مثال:
+
+Recommendation
+
+تم ترشيح Headset.
+
+Feedback
+
+"الصوت ممتاز، لكن الميكروفون مش عاجبني."
+
+Analysis
+Likes:
+- Good audio
+
+
+Dislikes:
+- Poor microphone
+Future
+
+عند ترشيح Headset مستقبلًا، يمكن إعطاء أهمية أعلى لجودة الميكروفون.
+
+=======================================================================================================
+
+
+17. Persistent Memory
+
+في المرحلة التعليمية يمكن استخدام:
+
+SQLite
+
+مثلًا:
+
+User
+ ↓
+Customer ID
+ ↓
+SQLite
+ ↓
+Preferences
+
+عند عودة المستخدم:
+
+New Session
+      ↓
+Load Customer Profile
+      ↓
+Use Relevant Preferences
+      ↓
+Personalized Response
+
+==============================================================================================
+
+
+18. Database Design
+
+في مرحلة Production يمكن استخدام PostgreSQL.
+
+Tables مقترحة
+merchants
+id
+name
+email
+created_at
+stores
+id
+merchant_id
+name
+domain
+products
+id
+store_id
+name
+description
+category
+price
+brand
+specifications
+availability
+customers
+id
+store_id
+external_id
+created_at
+conversations
+id
+customer_id
+store_id
+created_at
+messages
+id
+conversation_id
+role
+content
+created_at
+preferences
+id
+customer_id
+key
+value
+confidence
+source
+feedback
+id
+customer_id
+product_id
+content
+sentiment
+recommendations
+id
+customer_id
+conversation_id
+product_id
+rank
+
+=========================================================================================================================
+
+
+19. Product Architecture
+High-Level Architecture
+                    Shopper
+                       │
+                       ▼
+                 Chat Interface
+                       │
+                       ▼
+                    Backend
+                       │
+                       ▼
+                   AI Service
+                       │
+       ┌───────────────┼────────────────┐
+       │               │                │
+       ▼               ▼                ▼
+     Memory          Tools          Product Search
+       │               │                │
+       ▼               ▼                ▼
+Customer Profile   Actions        Product Database
+       │               │                │
+       └───────────────┼────────────────┘
+                       ▼
+                 Recommendation
+                       │
+                       ▼
+                 Final Response
+
+==================================================================================================
+
+
+20. Web SaaS Model
+
+النسخة التجارية المقترحة تبدأ كـ:
+
+B2B SaaS
+
+أي أن العميل الأساسي هو:
+
+صاحب المتجر الإلكتروني.
+
+20.1 Merchant Flow
+Merchant
+    ↓
+Create Account
+    ↓
+Create Store
+    ↓
+Upload / Connect Product Catalog
+    ↓
+Configure Assistant
+    ↓
+Generate Chat Widget
+    ↓
+Add Widget to Website
+20.2 Shopper Flow
+Shopper Visits Store
+       ↓
+Uses AI Assistant
+       ↓
+Describes Needs
+       ↓
+Assistant Searches Products
+       ↓
+Personalized Recommendations
+       ↓
+Product Page
+       ↓
+Add to Cart
+       ↓
+Checkout
+
+===================================================================================================================
+
+
+21. Merchant Dashboard
+
+يحتوي على:
+
+Store Management
+معلومات المتجر.
+إعدادات المتجر.
+مصادر المنتجات.
+Product Management
+رفع المنتجات.
+تعديل المنتجات.
+التوافر.
+Categories.
+Assistant Settings
+اسم الـAssistant.
+اللغة.
+طريقة الرد.
+Instructions.
+Limits.
+Analytics
+عدد المحادثات.
+أكثر الأسئلة.
+أكثر المنتجات ترشيحًا.
+Failed Searches.
+Product Clicks.
+
+
+===================================================================================================
+
+
+22. MVP
+
+لا يجب بناء النظام الكامل من البداية.
+
+MVP Version 1
+
+يتكون من:
+
+Chat UI
++
+LLM
++
+Product Catalog
++
+Product Search
++
+Basic Recommendation
++
+Conversation Context
+
+الشكل:
+
+User
+ ↓
+Chat
+ ↓
+LLM
+ ↓
+Search Product Catalog
+ ↓
+Filter Products
+ ↓
+Recommend
+ ↓
+Answer
+
+========================================================================================================================
+
+
+23. المراحل اللاحقة
+Version 2
+Tools
++
+Agent
++
+Product Details
+Version 3
+Customer Profile
++
+Persistent Memory
++
+Feedback
+Version 4
+Semantic Search
++
+RAG
++
+Advanced Ranking
+Version 5
+Merchant Dashboard
++
+Multi-tenancy
++
+Analytics
+Version 6
+Billing
++
+Integrations
++
+Production Scaling
+
+================================================================================================================================
+
+
+
+24. Tech Stack
+
+
+Frontend
+
+React + Next.js
+
+يستخدم في:
+
+Merchant Dashboard.
+Chat Widget.
+Admin Interface.
+Product Recommendation UI.
+Backend
+
+Python + FastAPI
+
+يستخدم في:
+
+API Development.
+AI Orchestration.
+Database Access.
+Authentication.
+Product Services.
+AI Layer
+LLM
++
+LangChain
++
+Prompt Engineering
++
+Structured Output
++
+Tool Calling
++
+Agents
++
+Memory
++
+RAG
+Database
+
+PostgreSQL
+
+لحفظ:
+
+المستخدمين.
+المتاجر.
+المنتجات.
+المحادثات.
+التفضيلات.
+الـFeedback.
+Vector Search
+
+يمكن استخدام:
+
+pgvector
+
+لتخزين Embeddings والقيام بالـSemantic Search في البداية.
+
+Cache
+
+Redis
+
+يمكن استخدامه لاحقًا في:
+
+Caching.
+Sessions.
+Rate Limiting.
+Queues.
+Deployment
+Docker
++
+Cloud Infrastructure
+
+==================================================================================================================
+
+
+25. Production Requirements
+
+تحويل المشروع من Demo إلى Production يحتاج أكثر من مجرد تشغيل الـLLM.
+
+يجب التفكير في:
+
+Reliability
+Error Handling.
+Retries.
+Timeouts.
+Fallbacks.
+Performance
+Caching.
+Database Indexes.
+Efficient Search.
+Response Streaming.
+Security
+Authentication.
+Authorization.
+Tenant Isolation.
+Secrets Management.
+Input Validation.
+Output Validation.
+AI Safety
+Prompt Injection Protection.
+Tool Permissions.
+Hallucination Reduction.
+Verified Product Data.
+Observability
+Logging.
+Monitoring.
+Error Tracking.
+Tool Execution Tracking.
+
+================================================================================================================================
+
+26. Multi-Tenancy
+
+لأن النظام SaaS، يمكن أن يوجد:
+
+Store A
+Store B
+Store C
+
+وكل متجر له:
+
+منتجات مختلفة.
+عملاء مختلفون.
+محادثات مختلفة.
+إعدادات مختلفة.
+
+لذلك يجب أن يكون النظام:
+
+Multi-Tenant
+
+مثال:
+
+Store A
+   │
+   ├── Products A
+   ├── Customers A
+   └── Conversations A
+
+
+Store B
+   │
+   ├── Products B
+   ├── Customers B
+   └── Conversations B
+
+ويجب منع أي متجر من الوصول إلى بيانات متجر آخر.
+
+======================================================================================================================
+
+27. Evaluation
+
+يجب إنشاء مجموعة Test Cases.
+
+مثال:
+
+Test Case 1:
+"عايز Laptop للبرمجة تحت 30 ألف."
+
+
+Expected:
+- Budget understood.
+- Category understood.
+- Products above budget excluded.
+Test Case 2
+"أنا قلتلك قبل كده إن البطارية مش مهمة."
+
+يجب اختبار هل الـMemory تعمل بشكل صحيح.
+
+Test Case 3
+"إيه مواصفات المنتج X؟"
+
+يجب التأكد من أن المعلومات تأتي من مصدر بيانات صحيح.
+
+Metrics
+Recommendation Relevance.
+Tool Selection Accuracy.
+Search Success Rate.
+Hallucination Rate.
+Response Latency.
+Cost per Request.
+User Satisfaction.
+
+========================================================================================================================
+
+
+28. Business Model
+
+النموذج المقترح:
+
+SaaS Subscription
+
+Starter
+متجر واحد.
+عدد محدود من المحادثات.
+Basic features.
+Growth
+استخدام أكبر.
+Advanced recommendations.
+Customer memory.
+Analytics.
+Enterprise
+Multiple stores.
+Custom integrations.
+Advanced security.
+Custom limits.
+
+
+=================================================================================================================
+
+
+29. القيمة التجارية للمشروع
+
+المشروع لا يبيع:
+
+"Chatbot."
+
+بل يقدم:
+
+AI-Powered Product Discovery and Personalized Recommendation System
+
+القيمة المتوقعة:
+
+Better Product Discovery
+          ↓
+Less Customer Confusion
+          ↓
+Better Shopping Experience
+          ↓
+Higher Product Engagement
+          ↓
+Potential Improvement in Conversion
+
+===============================================================================================================
+
+
+30. Roadmap التعلم والتنفيذ
+المرحلة الأولى: AI Fundamentals
+LLM APIs.
+Prompting.
+LangChain basics.
+تطبيق
+
+Basic Shopping Assistant.
+
+المرحلة الثانية: Memory
+Window Memory.
+Summary Memory.
+Hybrid Memory.
+تطبيق
+
+Customer Context.
+
+المرحلة الثالثة: Tools
+Tool Decorator.
+Tool Calling.
+Structured Outputs.
+تطبيق
+
+Product Search + Product Details.
+
+المرحلة الرابعة: Agents
+Agent workflows.
+ReAct concepts.
+Tool selection.
+تطبيق
+
+Shopping Agent.
+
+المرحلة الخامسة: Retrieval
+Embeddings.
+Vector Search.
+RAG.
+Metadata Filtering.
+تطبيق
+
+Semantic Product Search.
+
+المرحلة السادسة: Persistence
+SQLite.
+ثم PostgreSQL.
+تطبيق
+
+Persistent Customer Profile.
+
+المرحلة السابعة: Web Development
+React.
+Next.js.
+FastAPI.
+REST APIs.
+تطبيق
+
+Chat UI + Backend.
+
+المرحلة الثامنة: Production
+Docker.
+Redis.
+Deployment.
+Logging.
+Monitoring.
+Security.
+تطبيق
+
+Production-ready MVP.
+
+المرحلة التاسعة: SaaS
+Multi-tenancy.
+Merchant Dashboard.
+Analytics.
+Billing.
+تطبيق
+
+Commercial Product.
+
+==========================================================================================================================
+
+
+
+31. الشكل النهائي للمشروع
+                    ┌──────────────────┐
+                    │     SHOPPER      │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │   CHAT WIDGET    │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │      BACKEND     │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │    AI SERVICE    │
+                    └────────┬─────────┘
+                             │
+          ┌──────────────────┼──────────────────┐
+          ▼                  ▼                  ▼
+      MEMORY               TOOLS              SEARCH
+          │                  │                  │
+          ▼                  ▼                  ▼
+ CUSTOMER PROFILE      PRODUCT ACTIONS      PRODUCT DATA
+          │                  │                  │
+          └──────────────────┼──────────────────┘
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │ RECOMMENDATION   │
+                    │     ENGINE       │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │ PRODUCT RESULTS  │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │   ADD TO CART    │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                         PURCHASE
+                             │
+                             ▼
+                         FEEDBACK
+                             │
+                             ▼
+                    CUSTOMER PREFERENCES
+
+
+ ==============================================================================================================================
+32. الخلاصة النهائية
+
+Personal Shopping Assistant هو مشروع يمكن أن يبدأ كمشروع تعليمي لتطبيق مفاهيم:
+
+LLMs
+LangChain
+Memory
+Tools
+Agents
+Search
+RAG
+Persistent Memory
+
+ثم يتطور تدريجيًا إلى نظام حقيقي يعتمد على:
+
+Product Database.
+Personalized Recommendation.
+Customer Profiles.
+Feedback Analysis.
+Web Interface.
+Merchant Dashboard.
+Multi-tenancy.
+Analytics.
+
+ثم يمكن في النهاية تحويله إلى:
+
+B2B AI SaaS for E-commerce Stores
+
+والفكرة الأساسية للمشروع هي:
+
+استخدام الذكاء الاصطناعي لفهم احتياجات العميل وتفضيلاته وسياقه، وربط ذلك ببيانات المنتجات الحقيقية، من أجل تقديم توصيات شخصية تساعده على اتخاذ قرار شراء أفضل.
+
+وده يجعل المشروع مناسبًا جدًا كرحلة طويلة: من مشروع كورس → Portfolio Project → MVP → Production System → SaaS Product.

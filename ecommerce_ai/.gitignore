@@ -1,0 +1,35 @@
+
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Environment variables / secrets
+.env
+.env.*
+
+# Node
+node_modules/
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Local vector database
+chroma_db/
+
+# Local memory / cache
+memory/
+record_manager_cache.sql
+
+# Build / generated files
+build/
+dist/
+
+# IDE
+.vscode/
+.idea/
