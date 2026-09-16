@@ -1,0 +1,378 @@
+
+
+
+
+
+(.venv) PS C:\Users\DELL\Desktop\IT Will Be Cheery\To do for CV & git hub\summer training\ecommerce_ai> python app.py    
+            +-----------+                                                                                                
+            | __start__ |                 
+            +-----------+             
+                  *                   
+                  *                   
+                  *                   
+           +-------------+            
+           | load_memory |            
+           +-------------+            
+                  *                   
+                  *                   
+                  *                   
+           +------------+             
+           | call_model |             
+           +------------+             
+           ...         ...            
+          .               .           
+        ..                 ..         
++-----------+           +----------+  
+| run_tools |           | finalize |  
++-----------+           +----------+  
+                              *       
+                              *       
+                              *       
+                        +---------+   
+                        | __end__ |   
+                        +---------+   
+The plugin langchain_docling will not be loaded because Docling is being executed with allow_external_plugins=false.
+The plugin langchain_docling will not be loaded because Docling is being executed with allow_external_plugins=false.
+[INFO] 2026-09-06 11:42:28,799 [RapidOCR] base.py:23: Using engine_name: onnxruntime
+[INFO] 2026-09-06 11:42:28,878 [RapidOCR] download_file.py:60: File exists and is valid: C:\Users\DELL\Desktop\IT Will Be Cheery\To do for CV & git hub\summer training\.venv\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.onnx
+[INFO] 2026-09-06 11:42:28,879 [RapidOCR] main.py:63: Using C:\Users\DELL\Desktop\IT Will Be Cheery\To do for CV & git hub\summer training\.venv\Lib\site-packages\rapidocr\models\PP-OCRv6_det_small.onnx
+[INFO] 2026-09-06 11:42:29,096 [RapidOCR] base.py:23: Using engine_name: onnxruntime
+[INFO] 2026-09-06 11:42:29,128 [RapidOCR] download_file.py:60: File exists and is valid: C:\Users\DELL\Desktop\IT Will Be Cheery\To do for CV & git hub\summer training\.venv\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx
+[INFO] 2026-09-06 11:42:29,128 [RapidOCR] main.py:63: Using C:\Users\DELL\Desktop\IT Will Be Cheery\To do for CV & git hub\summer training\.venv\Lib\site-packages\rapidocr\models\ch_ppocr_mobile_v2.0_cls_mobile.onnx
+[INFO] 2026-09-06 11:42:29,310 [RapidOCR] base.py:23: Using engine_name: onnxruntime
+[INFO] 2026-09-06 11:42:29,451 [RapidOCR] download_file.py:60: File exists and is valid: C:\Users\DELL\Desktop\IT Will Be Cheery\To do for CV & git hub\summer training\.venv\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.onnx
+[INFO] 2026-09-06 11:42:29,451 [RapidOCR] main.py:63: Using C:\Users\DELL\Desktop\IT Will Be Cheery\To do for CV & git hub\summer training\.venv\Lib\site-packages\rapidocr\models\PP-OCRv6_rec_small.onnx
+The plugin langchain_docling will not be loaded because Docling is being executed with allow_external_plugins=false.
+Loading weights: 100%|██████████████████████████████████████████████████████████████| 770/770 [00:00<00:00, 2870.40it/s]
+The plugin langchain_docling will not be loaded because Docling is being executed with allow_external_plugins=false.
+Loaded 1 documents.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|██████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 2699.83it/s]
+Created 25 chunks.
+Loading weights: 100%|██████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 1855.57it/s]
+C:\Users\DELL\Desktop\IT Will Be Cheery\To do for CV & git hub\summer training\.venv\Lib\site-packages\langchain_core\indexing\api.py:409: UserWarning: Using SHA-1 for document hashing. SHA-1 is *not* collision-resistant; a motivated attacker can construct distinct inputs that map to the same fingerprint. If this matters in your threat model, switch to a stronger algorithm such as 'blake2b', 'sha256', or 'sha512' by specifying  `key_encoder` parameter in the `index` or `aindex` function. 
+  _warn_about_sha1()
+Indexing result: {'num_added': 0, 'num_updated': 0, 'num_skipped': 25, 'num_deleted': 0}
+1️⃣ ENTERED run_agent
+2️⃣ REQUEST CREATED
+Query: from the uploaded file , how can i be an ML Engineer?
+Session: customer_003
+3️⃣ BEFORE GRAPH
+Loading weights: 100%|██████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 1340.64it/s]
+dict_keys(['ids', 'embeddings', 'documents', 'uris', 'included', 'data', 'metadatas'])
+4️⃣ AFTER GRAPH
+Graph result: {'session_id': 'customer_003', 'query': 'from the uploaded file , how can i be an ML Engineer?', 'memory_context': '\nSummary:\nUser seeks gaming laptop recommendation and accessories within $1,447.30, prefers Alienware m15 R6, Razer keyboard, Logitech mouse, Corsair headset, Samsung SSD. Also has MSI Katana 15 HX RTX 5070 for ML internship.\n\nImportant keywords:\ngaming laptop, accessories, budget, Alienware, Razer, Logitech, Corsair, Samsung SSD, MSI Katana, ML internship\n', 'messages': [AIMessage(content='', additional_kwargs={'reasoning_content': 'We need to use DocumentSearch to find info in uploaded file about becoming an ML Engineer. The user asks: "from the uploaded file , how can i be an ML Engineer?" We need to search internal documents. Use Retrieve_internal_documents.', 'tool_calls': [{'id': 'fc_85b8baa6-0c94-4566-8dea-44b595d8feb1', 'function': {'arguments': '{"query":"how can i be an ML Engineer"}', 'name': 'Retrieve_internal_documents'}, 'type': 'function'}]}, response_metadata={'token_usage': {'completion_tokens': 80, 'prompt_tokens': 921, 'total_tokens': 1001, 'completion_time': 0.082384027, 'completion_tokens_details': {'reasoning_tokens': 49}, 'prompt_time': 0.049210234, 'prompt_tokens_details': None, 'queue_time': 0.302743709, 'total_time': 0.131594261}, 'model_name': 'openai/gpt-oss-20b', 'system_fingerprint': 'fp_a8c584dda7', 'service_tier': 'on_demand', 'finish_reason': 'tool_calls', 'logprobs': None, 'model_provider': 'groq'}, id='lc_run--01a075e2-a1d8-7882-9783-1bf791d1307a-0', tool_calls=[{'name': 'Retrieve_internal_documents', 'args': {'query': 'how can i be an ML Engineer'}, 'id': 'fc_85b8baa6-0c94-4566-8dea-44b595d8feb1', 'type': 'tool_call'}], invalid_tool_calls=[], usage_metadata={'input_tokens': 921, 'output_tokens': 80, 'total_tokens': 1001, 'output_token_details': {'reasoning': 49}}), ToolMessage(content='[Source: rag/AI Engineer vs. ML Engineer .pdf | Page: Unknown]\nContent: They often think about how AI can solve a practical business problem while keeping the application understandable and reliable. ML Engineers can work more closely with data scientists and data engineers. They may take experimental models and turn them into production systems.\n\n---\n\n[Source: rag/RAGDataFiles/AI Engineer vs. ML Engineer.pdf | Page: Unknown]\nContent: The two roles can also overlap in natural language processing. An AI Engineer may build a customer support chatbot, while an ML Engineer may develop an intent classification model or fine-tune a language model that supports the chatbot. The final system may require contributions from both professionals.\n\n---\n\n[Source: rag/AI Engineer vs. ML Engineer .pdf | Page: Unknown]\nContent: ML Engineers may work with more specialized machine learning infrastructure. Their responsibilities can include feature stores, experiment tracking, distributed training, model registries, batch inference, and model monitoring.', name='Retrieve_internal_documents', id='60c35611-604b-490a-986a-c80d1c5a20d5', tool_call_id='fc_85b8baa6-0c94-4566-8dea-44b595d8feb1'), AIMessage(content='## How to Become a Machine‑Learning Engineer\n\nBelow is a practical, step‑by‑step roadmap that blends the **role definition** you’ll find in the internal documents with the skills, tools, and career‑building tactics that hiring managers actually look for.\n\n| Phase | What to Do | Why It Matters |\n|-------|------------|----------------|\n| **1. Foundations** | • **Math & Stats** – Linear algebra, probability, statistics, calculus. <br>• **Programming** – Master Python (NumPy, pandas, scikit‑learn). <br>• **Data Structures & Algorithms** – Basic CS fundamentals. | ML is built on math and code; you’ll need to understand both to design, debug, and optimize models. |\n| **2. Core ML Knowledge** | • **Algorithms** – Linear regression, decision trees, SVM, k‑NN, clustering, neural nets. <br>• **Deep Learning** – CNNs, RNNs, transformers, autoencoders. <br>• **Frameworks** – TensorFlow, PyTorch, Keras. | These are the building blocks you’ll use in every project. |\n| **3. Production‑Ready Skills** | • **Model Deployment** – Docker, Flask/FastAPI, gRPC. <br>• **MLOps** – MLflow, DVC, Kubeflow, SageMaker, Vertex AI. <br>• **Feature Engineering & Stores** – Feast, Tecton. <br>• **Experiment Tracking & Model Registry** – MLflow, Weights & Biases. <br>• **Batch & Online Inference** – Kafka, Spark, Flink. <br>• **Monitoring & Logging** – Prometheus, Grafana, ELK stack. | The internal docs highlight that ML Engineers “take experimental models and turn them into production systems.” These skills are the bridge between data science prototypes and scalable, reliable services. |\n| **4. Cloud & DevOps** | • **Cloud Platforms** – AWS (SageMaker, ECS, EKS), GCP (Vertex AI, AI Platform), Azure (ML Studio). <br>• **CI/CD** – GitHub Actions, GitLab CI, Jenkins. <br>• **Infrastructure as Code** – Terraform, CloudFormation. | Most ML workloads run in the cloud; you’ll need to know how to spin up, scale, and secure them. |\n| **5. Real‑World Projects** | • **Portfolio** – Build end‑to‑end pipelines: data ingestion → feature engineering → model training → deployment → monitoring. <br>• **Open‑Source Contributions** – Fix bugs, add features to libraries like scikit‑learn, PyTorch, or MLflow. <br>• **Kaggle Competitions** – Showcase model performance and feature engineering. | Employers want to see *proof* that you can deliver a full ML lifecycle, not just write notebooks. |\n| **6. Soft Skills & Domain Knowledge** | • **Communication** – Explain model decisions to non‑technical stakeholders. <br>• **Collaboration** – Work with data scientists, data engineers, product managers. <br>• **Domain Expertise** – Finance, healthcare, e‑commerce, etc. | ML Engineers often “work more closely with data scientists and data engineers” and must translate business problems into technical solutions. |\n| **7. Certifications & Continuous Learning** | • **Certifications** – AWS Certified Machine Learning – Specialty, GCP Professional ML Engineer, Azure AI Engineer Associate. <br>• **Courses** – Coursera, edX, Udacity Nanodegrees (ML Engineer). <br>• **Conferences & Meetups** – NeurIPS, ICML, local ML meetups. | Certifications validate your knowledge; continuous learning keeps you up‑to‑date with fast‑moving tech. |\n| **8. Job Search & Networking** | • **Resume** – Highlight production‑ready projects, MLOps tools, and measurable impact. <br>• **LinkedIn** – Share blog posts, project demos, or open‑source contributions. <br>• **Interview Prep** – System design (ML system design), coding, MLOps scenarios, case studies. | A strong personal brand and network can open doors faster than a generic application. |\n\n---\n\n### Quick Checklist\n\n| ✔️ | Item |\n|----|------|\n| 1 | Solid math & Python foundation |\n| 2 | Deep learning frameworks (PyTorch/TensorFlow) |\n| 3 | MLOps tools (MLflow, DVC, Kubeflow) |\n| 4 | Cloud deployment (SageMaker, Vertex AI, Azure ML) |\n| 5 | End‑to‑end project in portfolio |\n| 6 | CI/CD + Docker + Kubernetes |\n| 7 | Monitoring & logging set‑up |\n| 8 | Soft skills & domain knowledge |\n| 9 | Certifications (optional but helpful) |\n|10 | Networking & interview prep |\n\n---\n\n### Sample Project Outline\n\n1. **Problem** – Predict customer churn for a SaaS product.  \n2. **Data** – Pull from a data lake (S3, BigQuery).  \n3. **Feature Store** – Feast to serve real‑time features.  \n4. **Model** – XGBoost + LightGBM ensemble, trained in PyTorch Lightning.  \n5. **Experiment Tracking** – MLflow to log hyperparameters, metrics, and artifacts.  \n6. **Deployment** – Docker container, Kubernetes (EKS), expose via FastAPI.  \n7. **Batch Inference** – Spark job to score 1M users nightly.  \n8. **Online Inference** – Kafka stream to serve predictions in < 50\u202fms.  \n9. **Monitoring** – Prometheus metrics, Grafana dashboards, alerting on drift.  \n10. **Documentation** – README, API docs, data‑flow diagram.\n\nShow this on GitHub, add a link to a live demo (if possible), and write a short blog post explaining the architecture. That’s a *complete* ML Engineer portfolio piece.\n\n---\n\n### Final Tips\n\n| Tip | Explanation |\n|-----|-------------|\n| **Start small, scale up** | Build a simple model first, then add production layers gradually. |\n| **Learn by doing** | Theoretical knowledge is great, but hands‑on experience is what hiring managers value. |\n| **Focus on reproducibility** | Use version control for code, data, and models. |\n| **Keep security in mind** | Data privacy, model explainability, and secure deployment are increasingly critical. |\n| **Ask for mentorship** | Find a senior ML Engineer or data scientist who can review your work. |\n\nGood luck on your journey to becoming a Machine‑Learning Engineer! If you’d like help with a specific skill (e.g., setting up MLflow, designing a feature store, or preparing for an interview), just let me know.', additional_kwargs={'reasoning_content': 'The user: "how can i be an ML Engineer". They want guidance. We can provide steps: education, skills, projects, certifications, networking, etc. Use internal docs? We have some content about ML Engineer roles. We can incorporate that. Provide actionable steps.'}, response_metadata={'token_usage': {'completion_tokens': 1517, 'prompt_tokens': 641, 'total_tokens': 2158, 'completion_time': 1.589341195, 'completion_tokens_details': {'reasoning_tokens': 56}, 'prompt_time': 0.04267602, 'prompt_tokens_details': None, 'queue_time': 0.088353336, 'total_time': 1.6320172149999999}, 'model_name': 'openai/gpt-oss-20b', 'system_fingerprint': 'fp_c5a89987dc', 'service_tier': 'on_demand', 'finish_reason': 'stop', 'logprobs': None, 'model_provider': 'groq'}, id='lc_run--01a075e2-bca9-7cc0-8803-a91eab9e2b55-0', tool_calls=[], invalid_tool_calls=[], usage_metadata={'input_tokens': 641, 'output_tokens': 1517, 'total_tokens': 2158, 'output_token_details': {'reasoning': 56}})], 'final_answer': '## How to Become a Machine‑Learning Engineer\n\nBelow is a practical, step‑by‑step roadmap that blends the **role definition** you’ll find in the internal documents with the skills, tools, and career‑building tactics that hiring managers actually look for.\n\n| Phase | What to Do | Why It Matters |\n|-------|------------|----------------|\n| **1. Foundations** | • **Math & Stats** – Linear algebra, probability, statistics, calculus. <br>• **Programming** – Master Python (NumPy, pandas, scikit‑learn). <br>• **Data Structures & Algorithms** – Basic CS fundamentals. | ML is built on math and code; you’ll need to understand both to design, debug, and optimize models. |\n| **2. Core ML Knowledge** | • **Algorithms** – Linear regression, decision trees, SVM, k‑NN, clustering, neural nets. <br>• **Deep Learning** – CNNs, RNNs, transformers, autoencoders. <br>• **Frameworks** – TensorFlow, PyTorch, Keras. | These are the building blocks you’ll use in every project. |\n| **3. Production‑Ready Skills** | • **Model Deployment** – Docker, Flask/FastAPI, gRPC. <br>• **MLOps** – MLflow, DVC, Kubeflow, SageMaker, Vertex AI. <br>• **Feature Engineering & Stores** – Feast, Tecton. <br>• **Experiment Tracking & Model Registry** – MLflow, Weights & Biases. <br>• **Batch & Online Inference** – Kafka, Spark, Flink. <br>• **Monitoring & Logging** – Prometheus, Grafana, ELK stack. | The internal docs highlight that ML Engineers “take experimental models and turn them into production systems.” These skills are the bridge between data science prototypes and scalable, reliable services. |\n| **4. Cloud & DevOps** | • **Cloud Platforms** – AWS (SageMaker, ECS, EKS), GCP (Vertex AI, AI Platform), Azure (ML Studio). <br>• **CI/CD** – GitHub Actions, GitLab CI, Jenkins. <br>• **Infrastructure as Code** – Terraform, CloudFormation. | Most ML workloads run in the cloud; you’ll need to know how to spin up, scale, and secure them. |\n| **5. Real‑World Projects** | • **Portfolio** – Build end‑to‑end pipelines: data ingestion → feature engineering → model training → deployment → monitoring. <br>• **Open‑Source Contributions** – Fix bugs, add features to libraries like scikit‑learn, PyTorch, or MLflow. <br>• **Kaggle Competitions** – Showcase model performance and feature engineering. | Employers want to see *proof* that you can deliver a full ML lifecycle, not just write notebooks. |\n| **6. Soft Skills & Domain Knowledge** | • **Communication** – Explain model decisions to non‑technical stakeholders. <br>• **Collaboration** – Work with data scientists, data engineers, product managers. <br>• **Domain Expertise** – Finance, healthcare, e‑commerce, etc. | ML Engineers often “work more closely with data scientists and data engineers” and must translate business problems into technical solutions. |\n| **7. Certifications & Continuous Learning** | • **Certifications** – AWS Certified Machine Learning – Specialty, GCP Professional ML Engineer, Azure AI Engineer Associate. <br>• **Courses** – Coursera, edX, Udacity Nanodegrees (ML Engineer). <br>• **Conferences & Meetups** – NeurIPS, ICML, local ML meetups. | Certifications validate your knowledge; continuous learning keeps you up‑to‑date with fast‑moving tech. |\n| **8. Job Search & Networking** | • **Resume** – Highlight production‑ready projects, MLOps tools, and measurable impact. <br>• **LinkedIn** – Share blog posts, project demos, or open‑source contributions. <br>• **Interview Prep** – System design (ML system design), coding, MLOps scenarios, case studies. | A strong personal brand and network can open doors faster than a generic application. |\n\n---\n\n### Quick Checklist\n\n| ✔️ | Item |\n|----|------|\n| 1 | Solid math & Python foundation |\n| 2 | Deep learning frameworks (PyTorch/TensorFlow) |\n| 3 | MLOps tools (MLflow, DVC, Kubeflow) |\n| 4 | Cloud deployment (SageMaker, Vertex AI, Azure ML) |\n| 5 | End‑to‑end project in portfolio |\n| 6 | CI/CD + Docker + Kubernetes |\n| 7 | Monitoring & logging set‑up |\n| 8 | Soft skills & domain knowledge |\n| 9 | Certifications (optional but helpful) |\n|10 | Networking & interview prep |\n\n---\n\n### Sample Project Outline\n\n1. **Problem** – Predict customer churn for a SaaS product.  \n2. **Data** – Pull from a data lake (S3, BigQuery).  \n3. **Feature Store** – Feast to serve real‑time features.  \n4. **Model** – XGBoost + LightGBM ensemble, trained in PyTorch Lightning.  \n5. **Experiment Tracking** – MLflow to log hyperparameters, metrics, and artifacts.  \n6. **Deployment** – Docker container, Kubernetes (EKS), expose via FastAPI.  \n7. **Batch Inference** – Spark job to score 1M users nightly.  \n8. **Online Inference** – Kafka stream to serve predictions in < 50\u202fms.  \n9. **Monitoring** – Prometheus metrics, Grafana dashboards, alerting on drift.  \n10. **Documentation** – README, API docs, data‑flow diagram.\n\nShow this on GitHub, add a link to a live demo (if possible), and write a short blog post explaining the architecture. That’s a *complete* ML Engineer portfolio piece.\n\n---\n\n### Final Tips\n\n| Tip | Explanation |\n|-----|-------------|\n| **Start small, scale up** | Build a simple model first, then add production layers gradually. |\n| **Learn by doing** | Theoretical knowledge is great, but hands‑on experience is what hiring managers value. |\n| **Focus on reproducibility** | Use version control for code, data, and models. |\n| **Keep security in mind** | Data privacy, model explainability, and secure deployment are increasingly critical. |\n| **Ask for mentorship** | Find a senior ML Engineer or data scientist who can review your work. |\n\nGood luck on your journey to becoming a Machine‑Learning Engineer! If you’d like help with a specific skill (e.g., setting up MLflow, designing a feature store, or preparing for an interview), just let me know.'}
+5️⃣ BEFORE RETURN
+Final answer: ## How to Become a Machine‑Learning Engineer
+
+Below is a practical, step‑by‑step roadmap that blends the **role definition** you’ll find in the internal documents with the skills, tools, and career‑building tactics that hiring managers actually look for.
+
+| Phase | What to Do | Why It Matters |
+|-------|------------|----------------|
+| **1. Foundations** | • **Math & Stats** – Linear algebra, probability, statistics, calculus. <br>• **Programming** – Master Python (NumPy, pandas, scikit‑learn). <br>• **Data Structures & Algorithms** – Basic CS fundamentals. | ML is built on math and code; you’ll need to understand both to design, debug, and optimize models. |
+| **2. Core ML Knowledge** | • **Algorithms** – Linear regression, decision trees, SVM, k‑NN, clustering, neural nets. <br>• **Deep Learning** – CNNs, RNNs, transformers, autoencoders. <br>• **Frameworks** – TensorFlow, PyTorch, Keras. | These are the building blocks you’ll use in every project. |
+| **3. Production‑Ready Skills** | • **Model Deployment** – Docker, Flask/FastAPI, gRPC. <br>• **MLOps** – MLflow, DVC, Kubeflow, SageMaker, Vertex AI. <br>• **Feature Engineering & Stores** – Feast, Tecton. <br>• **Experiment Tracking & Model Registry** – MLflow, Weights & Biases. <br>• **Batch & Online Inference** – Kafka, Spark, Flink. <br>• **Monitoring & Logging** – Prometheus, Grafana, ELK stack. | The internal docs highlight that ML Engineers “take experimental models and turn them into production systems.” These skills are the bridge between data science prototypes and scalable, reliable services. |
+| **4. Cloud & DevOps** | • **Cloud Platforms** – AWS (SageMaker, ECS, EKS), GCP (Vertex AI, AI Platform), Azure (ML Studio). <br>• **CI/CD** – GitHub Actions, GitLab CI, Jenkins. <br>• **Infrastructure as Code** – Terraform, CloudFormation. | Most ML workloads run in the cloud; you’ll need to know how to spin up, scale, and secure them. |
+| **5. Real‑World Projects** | • **Portfolio** – Build end‑to‑end pipelines: data ingestion → feature engineering → model training → deployment → monitoring. <br>• **Open‑Source Contributions** – Fix bugs, add features to libraries like scikit‑learn, PyTorch, or MLflow. <br>• **Kaggle Competitions** – Showcase model performance and feature engineering. | Employers want to see *proof* that you can deliver a full ML lifecycle, not just write notebooks. |
+| **6. Soft Skills & Domain Knowledge** | • **Communication** – Explain model decisions to non‑technical stakeholders. <br>• **Collaboration** – Work with data scientists, data engineers, product managers. <br>• **Domain Expertise** – Finance, healthcare, e‑commerce, etc. | ML Engineers often “work more closely with data scientists and data engineers” and must translate business problems into technical solutions. |
+| **7. Certifications & Continuous Learning** | • **Certifications** – AWS Certified Machine Learning – Specialty, GCP Professional ML Engineer, Azure AI Engineer Associate. <br>• **Courses** – Coursera, edX, Udacity Nanodegrees (ML Engineer). <br>• **Conferences & Meetups** – NeurIPS, ICML, local ML meetups. | Certifications validate your knowledge; continuous learning keeps you up‑to‑date with fast‑moving tech. |
+| **8. Job Search & Networking** | • **Resume** – Highlight production‑ready projects, MLOps tools, and measurable impact. <br>• **LinkedIn** – Share blog posts, project demos, or open‑source contributions. <br>• **Interview Prep** – System design (ML system design), coding, MLOps scenarios, case studies. | A strong personal brand and network can open doors faster than a generic application. |
+
+---
+
+### Quick Checklist
+
+| ✔️ | Item |
+|----|------|
+| 1 | Solid math & Python foundation |
+| 2 | Deep learning frameworks (PyTorch/TensorFlow) |
+| 3 | MLOps tools (MLflow, DVC, Kubeflow) |
+| 4 | Cloud deployment (SageMaker, Vertex AI, Azure ML) |
+| 5 | End‑to‑end project in portfolio |
+| 6 | CI/CD + Docker + Kubernetes |
+| 7 | Monitoring & logging set‑up |
+| 8 | Soft skills & domain knowledge |
+| 9 | Certifications (optional but helpful) |
+|10 | Networking & interview prep |
+
+---
+
+### Sample Project Outline
+
+1. **Problem** – Predict customer churn for a SaaS product.  
+2. **Data** – Pull from a data lake (S3, BigQuery).  
+3. **Feature Store** – Feast to serve real‑time features.  
+4. **Model** – XGBoost + LightGBM ensemble, trained in PyTorch Lightning.  
+5. **Experiment Tracking** – MLflow to log hyperparameters, metrics, and artifacts.  
+6. **Deployment** – Docker container, Kubernetes (EKS), expose via FastAPI.  
+7. **Batch Inference** – Spark job to score 1M users nightly.  
+8. **Online Inference** – Kafka stream to serve predictions in < 50 ms.  
+9. **Monitoring** – Prometheus metrics, Grafana dashboards, alerting on drift.  
+10. **Documentation** – README, API docs, data‑flow diagram.
+
+Show this on GitHub, add a link to a live demo (if possible), and write a short blog post explaining the architecture. That’s a *complete* ML Engineer portfolio piece.
+
+---
+
+### Final Tips
+
+| Tip | Explanation |
+|-----|-------------|
+| **Start small, scale up** | Build a simple model first, then add production layers gradually. |
+| **Learn by doing** | Theoretical knowledge is great, but hands‑on experience is what hiring managers value. |
+| **Focus on reproducibility** | Use version control for code, data, and models. |
+| **Keep security in mind** | Data privacy, model explainability, and secure deployment are increasingly critical. |
+| **Ask for mentorship** | Find a senior ML Engineer or data scientist who can review your work. |
+
+Good luck on your journey to becoming a Machine‑Learning Engineer! If you’d like help with a specific skill (e.g., setting up MLflow, designing a feature store, or preparing for an interview), just let me know.
+(.venv) PS C:\Users\DELL\Desktop\IT Will Be Cheery\To do for CV & git hub\summer training\ecommerce_ai> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Database initialized successfully.
+1️⃣ ENTERED run_agent
+2️⃣ REQUEST CREATED
+Query: hello
+user: customer_456
+thread: thread_100
+3️⃣ BEFORE GRAPH
+⚡ Memory not needed → skipping memory
+4️⃣ AFTER GRAPH
+5️⃣ BEFORE RETURN
+Final answer: Hi again! Let me know what you’re looking for—whether it’s product recommendations, a shopping plan, or anything else I can help with.
+(.venv) PS C:\Users\DELL\Desktop\IT Will Be Cheery\To do for CV & git hub\summer training\ecommerce_ai> python app.py
+Database initialized successfully.
+1️⃣ ENTERED run_agent
+2️⃣ REQUEST CREATED
+Query: what is the best Dell Latitude 5300 or Galaxy Book6 Ultra 
+user: customer_456
+thread: thread_100
+3️⃣ BEFORE GRAPH
+⚡ Memory not needed → skipping memory
+4️⃣ AFTER GRAPH
+5️⃣ BEFORE RETURN
+Final answer: **Quick Verdict:** **Dell Latitude 5300** is the better overall choice for most professional users because it offers proven reliability, stronger enterprise security/support, and typically better value for business‑focused budgets.  
+
+### Side‑by‑side comparison
+
+| Feature | **Dell Latitude 5300** | **Samsung Galaxy Book6 Ultra** |
+|---|---|---|
+| **Target audience** | Business/IT departments, enterprise users | Consumers, creators, users who want the newest consumer‑grade tech |
+| **Processor platform** | 10th/11th‑gen Intel (depending on configuration) | Newer generation (likely 12th‑gen Intel or equivalent) |
+| **Display** | 13.3‑inch FHD (non‑touch or touch) | 13‑inch (often OLED or high‑refresh‑rate) |
+| **Build & durability** | MIL‑STD‑810G tested, robust chassis | Premium aluminum, sleek but less rugged |
+| **Security** | TPM 2.0, optional smart‑card reader, Dell Optimizer, Dell Client Command Suite | Basic Windows Hello, optional fingerprint; fewer enterprise‑grade options |
+| **Ports** | USB‑C (Thunderbolt 3 on some models), USB‑A, HDMI, Ethernet (via adapter), micro‑SD | USB‑C (Thunderbolt 4), USB‑A, HDMI (sometimes via adapter), no native Ethernet |
+| **Battery life** | ~10‑12 hrs (typical business usage) | ~9‑11 hrs (depends on OLED/refresh rate) |
+| **Service & warranty** | Dell ProSupport, on‑site service options, easy parts replacement | Samsung service is more consumer‑oriented; fewer on‑site options |
+| **Price (typical)** | $900‑$1,300 (often lower when refurbished) | $1,200‑$1,800 (premium pricing) |
+| **Strengths** | • Enterprise‑grade security & manageability<br>• Proven durability & service network<br>• Good price‑to‑performance for business | • Newer CPU & potentially faster performance<br>• Premium design, lighter weight<br>• OLED/high‑refresh display options |
+| **Weaknesses** | • Older CPU generation (may lag behind newest models)<br>• Bulkier than ultra‑thin consumer laptops | • Higher cost for similar specs<br>• Less robust business support & security features |
+
+### Who should pick which?
+
+- **Choose Dell Latitude 5300 if you need:**  
+  - Strong IT management (MDM, remote provisioning)  
+  - Enterprise‑grade security (TPM, smart‑card, optional fingerprint)  
+  - Reliable service and easy part replacement  
+  - Good value for a business‑class laptop  
+
+  - The latest consumer‑grade CPU and possibly an OLED display  
+  - A lighter, more stylish chassis for personal or creative work  
+  - Cutting‑edge connectivity (Wi‑Fi 6E, Thunderbolt 4)  
+
+### Bottom line
+For **business reliability and support**, the **Dell Latitude 5300** wins. If you prioritize **cutting‑edge design, newer hardware, and a premium display** and are okay with a higher price and less enterprise support, the **Samsung Galaxy Book6 Ultra** could be worth it.
+(.venv) PS C:\Users\DELL\Desktop\IT Will Be Cheery\To do for CV & git hub\summer training\ecommerce_ai> python app.py
+Database initialized successfully.
+1️⃣ ENTERED run_agent
+2️⃣ REQUEST CREATED
+Query: Recommend a gaming laptop and its accessories
+user: customer_456
+thread: thread_100
+3️⃣ BEFORE GRAPH
+⚡ Memory not needed → skipping memory
+4️⃣ AFTER GRAPH
+5️⃣ BEFORE RETURN
+Final answer: **Gaming Laptop Recommendation + Essential Accessories**
+
+---
+
+## 🎮 Laptop Pick (Best overall)
+
+**ASUS ROG Zephyrus G14 (2024)**  
+- **CPU:** AMD Ryzen 9 8945HS  
+- **GPU:** NVIDIA RTX 4070 (mobile)  
+- **RAM:** 16 GB DDR5 (upgradeable)  
+- **Storage:** 1 TB NVMe SSD  
+- **Display:** 14‑inch 120 Hz OLED (or 144 Hz IPS) – vibrant colors, great for both gaming and media  
+- **Weight:** ~3.5 lb (portable for a gaming rig)  
+- **Battery life:** ~8‑10 hrs (unusual for a gaming laptop)  
+- **Price:** **≈ $1,500** (varies by retailer)  
+- **Why it’s a solid choice:**  
+  - Excellent performance‑to‑portability ratio.  
+  - High‑quality OLED screen for immersive visuals.  
+  - Quiet, efficient cooling system.  
+  - Good battery life for a gaming laptop, so you can use it on the go.  
+
+---
+
+## 🔧 Must‑Have Accessories
+
+| Accessory | Recommended Model | Reason / Key Features | Approx. Price |
+|-----------|-------------------|-----------------------|---------------|
+| **Gaming Mouse** | **Logitech G502 Lightspeed (wireless)** | High‑precision sensor, 11 programmable buttons, lightweight, excellent for FPS/MOBA. | $80‑$100 |
+| **Mechanical Keyboard** | **Keychron K8 Pro (Wireless, TKL)** | Hot‑swappable switches, RGB, Bluetooth + USB‑C, compact for travel. | $120‑$150 |
+| **External Monitor** | **LG 27GN950‑B 27” 4K 144 Hz** | 4K resolution with fast refresh, HDR, great for both gaming and content creation. | $600‑$650 |
+| **Gaming Headset** | **SteelSeries Arctis 7 + Wireless** | Clear surround sound, comfortable, long battery life, Discord‑ready mic. | $150‑$180 |
+| **Cooling Pad** | **Cooler Master Notepads X3** | Dual fans, adjustable height, USB‑C power for the laptop. | $30‑$40 || **Laptop Sleeve / Carry Case** | **Incase ICON Sleeve (15‑inch)** | Padded protection, sleek design, fits accessories pocket. | $40‑$50 |
+| **External SSD (for extra storage)** | **Samsung T7 2 TB Portable SSD** | USB‑3.2 Gen 2, 1050 MB/s read/write, compact. | $180‑$200 |
+| **Mouse Pad (large, smooth)** | **SteelSeries QcK Gaming Surface – XXL** | Large enough for low‑dpi mouse movements, smooth texture. | $15‑$20 |
+| **Power Strip with Surge Protection** | **APC P11VT3** | 11 outlets, 6 USB‑C ports, protects against spikes. | $30‑$35 |
+| **VR Ready (optional)** | **Oculus Quest 2 (256 GB)** | Standalone VR headset; can be tethered to laptop for PC VR. | $300‑$350 |
+
+---
+
+## 📦 How to Bundle (Cost‑Effective)
+
+| Bundle | Items Included | Approx. Total Cost |
+|--------|----------------|--------------------|
+| **Starter Pack** (essential for gaming on the go) | ASUS ROG G14 + Logitech G502 + SteelSeries Arctis 7 + InCase sleeve | **≈ $1,850** |
+| **Full‑Setup Pack** (desktop‑level experience) | Starter Pack + LG 27‑inch 4K monitor + Samsung T7 2 TB SSD + Cooler Master cooling pad | **≈ $2,650** |
+| **Ultimate Pro Pack** (adds VR & extra storage) | Full‑Setup Pack + Oculus Quest 2 + Keychron K8 Pro | **≈ $3,200** |
+
+*(Prices are averages from major retailers; look for sales or bundle discounts.)*
+
+---
+
+## 🛒 Where to Buy
+
+- **Laptop:** Amazon, Best Buy, Newegg, ASUS official store.  
+- **Accessories:** Amazon, B&H Photo, Micro Center, directly from manufacturers (Logitech, SteelSeries, etc.).  
+
+---
+
+### Quick Tips for Choosing the Right Setup
+
+1. **Performance vs. Portability:** If you travel a lot, the G14’s size and battery life are huge advantages. For a stationary desk setup, you might prefer a larger 15‑inch laptop (e.g., Razer Blade 16) paired with a 27‑inch monitor.  
+2. **Upgrade Path:** The G14 allows RAM and SSD upgrades later—keep a spare 16 GB DDR5 stick handy.  
+3. **Display Preference:** OLED gives deeper blacks and vivid colors, but it can be more expensive. The 144 Hz IPS option is still excellent for fast‑paced games.  ternal GPUs or fast storage later.  
+
+---
+type that matches your play style!
+
+(.venv) PS C:\Users\DELL\Desktop\IT Will Be Cheery\To do for CV & git hub\summer training\ecommerce_ai> python app.py
+Database initialized successfully.
+1️⃣ ENTERED run_agent
+2️⃣ REQUEST CREATED
+Query: what do you think teh best ipad for me is ?
+user: customer_456
+thread: thread_100
+3️⃣ BEFORE GRAPH
+🧠 Memory needed → loading memory
+
+========== MEMORY ==========
+{'summary': 'User wants a gaming laptop recommendation: ASUS ROG Zephyrus G14 (~$1500) with accessories: Logitech G502, Keychron K8 Pro, LG 27GN950 monitor, SteelSeries Arctis 7 headset, Cooler Master Notepads X3, Incase ICON Sleeve, Samsung T7 SSD.', 'keywords': ['dry hair', 'shampoo', 'MoroccanOil', 'sulfate-free', 'summer vacation', 'budget', 'high priority', 'medium priority', 'low priority', 'travel pillow', 'insect repellent', 'first aid kit', 'power bank', 'rain jacket', 'Dell Latitude 5300', 'Galaxy Book6 Ultra', 'best laptop', 'professional', 'enterprise', 'gaming laptop', 'ASUS ROG Zephyrus G14', 'Logitech G502', 'Keychron K8 Pro', 'LG 27GN950', 'SteelSeries Arctis 7', 'Cooler Master Notepads X3', 'Incase ICON Sleeve', 'Samsung T7']}
+============================
+
+4️⃣ AFTER GRAPH
+5️⃣ BEFORE RETURN
+Final answer: I’d love to help you pick the perfect iPad, but the “best” model really depends on how you plan to use it and what’s most important to you (budget, screen size, performance, accessories, etc.). Could you let me know a bit more about your needs?
+
+**Some helpful questions:**
+
+1. **Primary use:**  
+   - Light tasks (email, browsing, streaming)  
+   - Productivity (documents, spreadsheets, note‑taking, Apple Pencil)  
+   - Creative work (drawing, photo/video editing, music)  
+   - Gaming or media consumption  
+
+2. **Screen size preference:**  
+   - Compact (8‑inch, great for portability)  
+   - Standard (10.2‑10.9 in, good all‑round)  
+   - Large (11‑12.9 in, best for multitasking and drawing)  
+
+3. **Budget range:**  
+   - Under $400  
+   - $400‑$800  
+   - $800‑$1,200  
+   - No strict limit  
+
+4. **Apple Pencil & Keyboard:**  
+   - Do you need Apple Pencil support (for drawing or note‑taking)?  
+   - Will you use a keyboard accessory for typing?  
+
+5. **Connectivity:**  
+   - Wi‑Fi only is fine, or do you need cellular capability?  
+
+Once I have a better sense of your priorities, I can recommend the iPad model (and any useful accessories) that will suit you best.
+(.venv) PS C:\Users\DELL\Desktop\IT Will Be Cheery\To do for CV & git hub\summer training\ecommerce_ai> 
+
+
+
+
+
+
+
+
+                 USER
+                  │
+                  ▼
+             Flask /chat
+                  │
+                  ▼
+              run_agent
+                  │
+                  ▼
+          ┌─────────────────┐
+          │ check_memory_need│
+          └────────┬────────┘
+                   │
+          ┌────────┴────────┐
+          │                 │
+      no memory         need memory
+          │                 │
+          ▼                 ▼
+      call_model       load_memory
+          │                 │
+          │                 ▼
+          │             call_model
+          │                 │
+          └────────┬────────┘
+                   ▼
+              Tool Routing
+                   │
+              ┌────┴────┐
+              │         │
+            Tool      No Tool
+              │         │
+              ▼         ▼
+          call_model  finalize
+              │
+              ▼
+           finalize
+              │
+              ▼
+         update memory
+              │
+              ▼
+             END

@@ -17,7 +17,7 @@ search = TavilySearch(
 
 
 @tool
-def WebSearch(query: str) -> WebSearchResponse :
+async def WebSearch(query: str) -> WebSearchResponse:
     """
     Search the web for current product information such as
     prices, specifications, reviews, availability, and offers.
@@ -25,25 +25,17 @@ def WebSearch(query: str) -> WebSearchResponse :
     If the user doesn't enter a specific year, retrieve the data for the latest year.
     """
 
-    # ==========================================
-    # 1. Search the web using Tavily
-    # ==========================================
+    results = await search.ainvoke(query)
 
-    results = search.invoke(query)
-
-    # ==========================================
-    # 2. Convert raw results into structured output
-    # ==========================================
-
-    response = WebSearch_llm.invoke(
+    response = await  WebSearch_llm.ainvoke(
         f"""
-        Extract the relevant product information from these
-        web search results.
+        Extract product information from the following web search results.
 
-        Return the information using the required structured format.
+        Only use information that appears in the search results.
+        Do not invent or assume missing information.
 
         Search results:
-                        {results}
+        {results}
         """
     )
 

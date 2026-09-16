@@ -137,11 +137,15 @@ class UserRequest(BaseModel):
         description="User's question."
     )
 
-    session_id: str = Field(
+    user_id: str = Field(
         default="default_guest",
-        description="Session ID for memory tracking."
+        description="User ID for memory tracking."
     )
 
+    thread_id: str = Field(
+        default_factory=lambda: str(uuid.uuid4()),
+        description="Unique thread ID for this conversation."
+    )
 #-------------------------------------------------------------------------------------------#
 
 class SubmitFinalAnswerInput(BaseModel):

@@ -1,0 +1,83 @@
+
+
+#=================================================================================#
+#---------------------------------- Config Yaml ----------------------------------#
+#=================================================================================#
+
+
+
+
+model_list:
+
+  # =========================
+  # Agent Models
+  # =========================
+
+  - model_name: agent-pool
+    litellm_params:
+      model: groq/openai/gpt-oss-120b
+      api_key: os.environ/GROQ_API_KEY_1
+      rpm: 30
+
+
+  # =========================
+  # Final Response Model
+  # =========================
+
+  - model_name: response-pool
+    litellm_params:
+      model: groq/qwen/qwen3.8-27b
+      api_key: os.environ/GROQ_API_KEY_1
+      rpm: 30
+
+
+  # =========================
+  # Summary / Memory Model
+  # =========================
+
+  - model_name: summary-pool
+    litellm_params:
+      model: groq/openai/gpt-oss-20b
+      api_key: os.environ/GROQ_API_KEY_1
+      rpm: 30
+
+
+  # =========================
+  # Embedding Models
+  # =========================
+
+  - model_name: embedding-pool
+    litellm_params:
+      model: gemini/gemini-embedding-001
+      api_key: os.environ/GOOGLE_API_KEY
+      rpm: 100
+
+  - model_name: embedding-pool
+    litellm_params:
+      model: gemini/gemini-embedding-001
+      api_key: os.environ/GOOGLE_API_KEY_2
+      rpm: 100
+
+
+# =========================
+# LiteLLM Settings
+# =========================
+
+litellm_settings:
+  cache: true
+
+  cache_params:
+    type: local
+
+  drop_params: true
+
+
+# =========================
+# Router Settings
+# =========================
+
+router_settings:
+  routing_strategy: usage-based-routing-v2
+  num_retries: 3
+  allowed_fails: 2
+  cooldown_time: 30

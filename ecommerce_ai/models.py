@@ -5,9 +5,9 @@
 # ===============================================================================#
 
 
+from langchain_openai import ChatOpenAI
+from config import LITELLM_BASE_URL, TEMPERATURE
 
-from langchain_groq import ChatGroq
-from config import GROQ_MODEL, TEMPERATURE
 
 from schemas import (
     ProductComparisonResponse,
@@ -20,10 +20,32 @@ from schemas import (
 
 
 # General Agent LLM 
-llm = ChatGroq( model=GROQ_MODEL, temperature=0 ) 
+
+agent_llm = ChatOpenAI(
+    model="agent-pool",
+    base_url=LITELLM_BASE_URL,
+    api_key="anything",
+    temperature=TEMPERATURE,
+)
 
 # Structured Output LLM 
-structured_llm = ChatGroq( model=GROQ_MODEL, temperature=0 )
+
+structured_llm = ChatOpenAI(
+    model="response-pool",
+    base_url=LITELLM_BASE_URL,
+    api_key="anything",
+    temperature=TEMPERATURE,
+)
+
+
+# Summary Output LLM 
+
+summary_llm = ChatOpenAI(
+    model="summary-pool",
+    base_url=LITELLM_BASE_URL,
+    api_key="anything",
+    temperature=TEMPERATURE,
+)
 
 
 
@@ -34,7 +56,8 @@ ProductComparison_llm = structured_llm.with_structured_output(
     ProductComparisonResponse )
 
 ProductRecommendation_llm = structured_llm.with_structured_output(
-    ProductRecommendationResponse )
+    ProductRecommendationResponse , 
+    method="json_schema" )
 
 WebSearch_llm=structured_llm.with_structured_output(
     WebSearchResponse ,
